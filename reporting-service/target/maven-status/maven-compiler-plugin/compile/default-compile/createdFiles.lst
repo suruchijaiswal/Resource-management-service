@@ -1,8 +1,0 @@
-com\example\reporting\model\Approval.class
-com\example\reporting\repository\AllocationRepository.class
-com\example\reporting\client\ResourceServiceClient.class
-com\example\reporting\model\Allocation.class
-com\example\reporting\ReportingServiceApplication.class
-com\example\reporting\service\ReportService.class
-com\example\reporting\repository\ApprovalRepository.class
-com\example\reporting\controller\ReportController.class

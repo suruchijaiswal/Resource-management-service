@@ -27,8 +27,9 @@ public class LifecycleController {
 
     // Release request
     @PostMapping("/allocations/{id}/release")
-    public ResponseEntity<ReleaseRequest> requestRelease(@PathVariable Long id, @RequestBody ReleaseRequest r){
-        r.setAllocationId(id); return ResponseEntity.ok(service.createReleaseRequest(r));
+    public ResponseEntity<ReleaseRequest> requestRelease(@PathVariable Long id, @RequestBody ReleaseRequest r) {
+        r.setAllocationId(id);
+        return ResponseEntity.ok(service.createReleaseRequest(r));
     }
 
     // Additional / Extension / External requests

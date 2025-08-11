@@ -1,7 +1,13 @@
 package com.example.reporting.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.time.LocalDateTime;
+
+@Getter
+@Setter
 @Entity
 @Table(name = "approval")
 public class Approval {
@@ -10,19 +16,12 @@ public class Approval {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "approver_name")
-    private String approverName;
+    @Enumerated(EnumType.STRING)
+    private ApprovalStatus status;
 
-    @Column(name = "status")
-    private String status;
-
-    public Approval() {
-    }
-
-    public Approval(String approverName, String status) {
-        this.approverName = approverName;
-        this.status = status;
-    }
-
-
+    private LocalDateTime requestDate;
+    private LocalDateTime approvalDate;
+    private LocalDateTime rejectionDate;
+    private String approverComments;
+    private String rejectionReason;
 }

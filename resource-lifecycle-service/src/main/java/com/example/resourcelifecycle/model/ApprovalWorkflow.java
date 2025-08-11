@@ -17,11 +17,4 @@ public class ApprovalWorkflow {
     private String approver; // role or user
     private String status = "PENDING"; // PENDING, APPROVED, REJECTED
     private LocalDateTime actedAt;
-    // getters/setters
-    public Long getId(){return id;} public void setId(Long id){this.id=id;}
-    public String getRequestType(){return requestType;} public void setRequestType(String r){this.requestType=r;}
-    public Long getRequestId(){return requestId;} public void setRequestId(Long i){this.requestId=i;}
-    public String getApprover(){return approver;} public void setApprover(String a){this.approver=a;}
-    public String getStatus(){return status;} public void setStatus(String s){this.status=s;}
-    public LocalDateTime getActedAt(){return actedAt;} public void setActedAt(LocalDateTime t){this.actedAt=t;}
-}
+    }
