@@ -1,0 +1,83 @@
+{
+  "info": {
+    "name": "RMS Business Full",
+    "_postman_id": "rms-business-001",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Allocation",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"resourceName\":\"John\",\"projectName\":\"Alpha\",\"hoursAllocated\":40}"
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/allocations"
+        }
+      }
+    },
+    {
+      "name": "Request Additional",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"allocationId\":1,\"additionalHours\":20,\"reason\":\"Need more\"}"
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/requests/additional"
+        }
+      }
+    },
+    {
+      "name": "List Workflows",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8081/api/workflows"
+        }
+      }
+    },
+    {
+      "name": "Act Workflow Approve",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "http://localhost:8081/api/workflows/1/act?approver=manager1&action=APPROVED"
+        }
+      }
+    },
+    {
+      "name": "Get Fulfillments",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8081/api/fulfillments"
+        }
+      }
+    },
+    {
+      "name": "Reporting Summary",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8085/api/reports/summary"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,345 @@
+{
+	"info": {
+		"_postman_id": "635c80d6-add5-4e98-8f0e-470a9f65e901",
+		"name": "RMS Backend Resource Allocation - Full Test",
+		"description": "Postman collection for all endpoints with dummy data",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15187986"
+	},
+	"item": [
+		{
+			"name": "Get Reports Summary",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/reports/summary",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"reports",
+						"summary"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Allocation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"resourceId\": 101,\n    \"projectId\": 501,\n    \"startDate\": \"2025-08-11\",\n    \"endDate\": \"2025-12-31\",\n    \"status\": \"ALLOCATED\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/allocations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"allocations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Allocations",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/allocations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"allocations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Allocation by ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/allocations/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"allocations",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Allocation Count",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/allocations/count",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"allocations",
+						"count"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Release Allocation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"releaseDate\": \"2025-09-15\",\n    \"reason\": \"Project completed\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/allocations/1/release",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"allocations",
+						"1",
+						"release"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Additional Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"allocationId\": 1,\n    \"additionalHours\": 40,\n    \"reason\": \"Extra workload\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/requests/additional",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"requests",
+						"additional"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Extension Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"allocationId\": 1,\n    \"newEndDate\": \"2026-01-31\",\n    \"reason\": \"Project deadline extended\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/requests/extension",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"requests",
+						"extension"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create External Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"resourceName\": \"John Doe\",\n    \"company\": \"External Vendor\",\n    \"durationWeeks\": 12,\n    \"skills\": [\n        \"Java\",\n        \"Spring Boot\"\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/requests/external",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"requests",
+						"external"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Workflows",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/workflows",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"workflows"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Act on Workflow",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"APPROVE\",\n    \"actedBy\": \"ManagerUser\",\n    \"comments\": \"Approved for execution\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/workflows/1/act",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"workflows",
+						"1",
+						"act"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Fulfillments",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/fulfillments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"fulfillments"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
