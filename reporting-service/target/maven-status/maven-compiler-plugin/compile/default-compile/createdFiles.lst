@@ -1,0 +1,15 @@
+com\example\reporting\client\ResourceServiceClient.class
+com\example\reporting\model\Allocation.class
+com\example\reporting\model\RequestType.class
+com\example\reporting\controller\ApprovalController.class
+com\example\reporting\repository\ApprovalRepository.class
+com\example\reporting\service\ApprovalWorkflowService.class
+com\example\reporting\model\Approval.class
+com\example\reporting\model\ApprovalStatus.class
+com\example\reporting\repository\AllocationRepository.class
+com\example\reporting\config\FeignClientConfiguration.class
+com\example\reporting\model\ExtensionReductionRequest.class
+com\example\reporting\ReportingServiceApplication.class
+com\example\reporting\model\RequestStatus.class
+com\example\reporting\service\ReportService.class
+com\example\reporting\controller\ReportController.class
