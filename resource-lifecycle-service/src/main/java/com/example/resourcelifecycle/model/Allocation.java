@@ -5,9 +5,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+
 @Getter
 @Setter
-
 @Entity
 @Table(name = "allocation")
 public class Allocation {
@@ -17,10 +17,22 @@ public class Allocation {
     private String resourceName;
     private String projectName;
     private Integer hoursAllocated;
-    private LocalDate startDate;
-    private LocalDate endDate;
-    @Enumerated(EnumType.STRING)
-    private Status status = Status.ACTIVE;
+    private java.time.LocalDate startDate;
+    private java.time.LocalDate endDate;
+    private AllocationStatus status;
 
-    public enum Status {ACTIVE, RELEASE_REQUESTED, RELEASED, COMPLETED}
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+    public String getResourceName() { return resourceName; }
+    public void setResourceName(String resourceName) { this.resourceName = resourceName; }
+    public String getProjectName() { return projectName; }
+    public void setProjectName(String projectName) { this.projectName = projectName; }
+    public Integer getHoursAllocated() { return hoursAllocated; }
+    public void setHoursAllocated(Integer hoursAllocated) { this.hoursAllocated = hoursAllocated; }
+    public java.time.LocalDate getStartDate() { return startDate; }
+    public void setStartDate(java.time.LocalDate startDate) { this.startDate = startDate; }
+    public java.time.LocalDate getEndDate() { return endDate; }
+    public void setEndDate(java.time.LocalDate endDate) { this.endDate = endDate; }
+    public AllocationStatus getStatus() { return status; }
+    public void setStatus(AllocationStatus status) { this.status = status; }
 }

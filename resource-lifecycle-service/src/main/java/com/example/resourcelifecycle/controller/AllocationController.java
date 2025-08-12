@@ -2,6 +2,7 @@ package com.example.resourcelifecycle.controller;
 
 
 import com.example.resourcelifecycle.model.Allocation;
+import com.example.resourcelifecycle.model.AllocationDTO;
 import com.example.resourcelifecycle.service.AllocationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,8 +20,7 @@ public class AllocationController {
 
 
     @GetMapping
-    public List<Allocation> getAllAllocations() {
-
+    public List<AllocationDTO> getAllAllocations() {
         return allocationService.getAllAllocations();
     }
 }

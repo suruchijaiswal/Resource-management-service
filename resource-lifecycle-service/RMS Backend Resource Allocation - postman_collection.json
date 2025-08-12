@@ -340,6 +340,270 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Create External Requirement",
+			"request": {
+				"method": "POST",
+				"header": [
+					{ "key": "Content-Type", "value": "application/json" }
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/external-requirements?statusStr=OPEN&quantity=5",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "lifecycle", "external-requirements"],
+					"query": [
+						{ "key": "statusStr", "value": "OPEN" },
+						{ "key": "quantity", "value": "5" }
+					]
+				}
+			}
+		},
+		{
+			"name": "Update External Requirement",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{ "key": "Content-Type", "value": "application/json" }
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/external-requirements/1?statusStr=APPROVED&quantity=10",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "lifecycle", "external-requirements", "1"],
+					"query": [
+						{ "key": "statusStr", "value": "APPROVED" },
+						{ "key": "quantity", "value": "10" }
+					]
+				}
+			}
+		},
+		{
+			"name": "Get All External Requirements",
+			"request": {
+				"method": "GET",
+				"header": [
+					{ "key": "Content-Type", "value": "application/json" }
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/external-requirements",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "lifecycle", "external-requirements"]
+				}
+			}
+		},
+		{
+			"name": "Create Open Position",
+			"request": {
+				"method": "POST",
+				"header": [
+					{ "key": "Content-Type", "value": "application/json" }
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/open-positions?statusStr=OPEN&quantity=3",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "lifecycle", "open-positions"],
+					"query": [
+						{ "key": "statusStr", "value": "OPEN" },
+						{ "key": "quantity", "value": "3" }
+					]
+				}
+			}
+		},
+		{
+			"name": "Update Open Position",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{ "key": "Content-Type", "value": "application/json" }
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/open-positions/1?statusStr=CLOSED&quantity=2",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "lifecycle", "open-positions", "1"],
+					"query": [
+						{ "key": "statusStr", "value": "CLOSED" },
+						{ "key": "quantity", "value": "2" }
+					]
+				}
+			}
+		},
+		{
+			"name": "Get All Open Positions",
+			"request": {
+				"method": "GET",
+				"header": [
+					{ "key": "Content-Type", "value": "application/json" }
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/open-positions",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "lifecycle", "open-positions"]
+				}
+			}
+		},
+		{
+			"name": "Create External Requirement",
+			"request": {
+				"method": "POST",
+				"header": [{ "key": "Content-Type", "value": "application/json" }],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"status\": \"OPEN\",\n  \"quantity\": 5\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/requests/external",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "requests", "external"]
+				}
+			}
+		},
+		{
+			"name": "Update External Requirement",
+			"request": {
+				"method": "PUT",
+				"header": [{ "key": "Content-Type", "value": "application/json" }],
+				"url": {
+					"raw": "http://localhost:8080/api/external-requirements/1?statusStr=APPROVED&quantity=10",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "external-requirements", "1"],
+					"query": [
+						{ "key": "statusStr", "value": "APPROVED" },
+						{ "key": "quantity", "value": "10" }
+					]
+				}
+			}
+		},
+		{
+			"name": "Get All External Requirements",
+			"request": {
+				"method": "GET",
+				"header": [{ "key": "Content-Type", "value": "application/json" }],
+				"url": {
+					"raw": "http://localhost:8080/api/external-requirements",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "external-requirements"]
+				}
+			}
+		},
+		{
+			"name": "Create Open Position",
+			"request": {
+				"method": "POST",
+				"header": [{ "key": "Content-Type", "value": "application/json" }],
+				"url": {
+					"raw": "http://localhost:8080/api/open-positions?statusStr=OPEN&quantity=3",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "open-positions"],
+					"query": [
+						{ "key": "statusStr", "value": "OPEN" },
+						{ "key": "quantity", "value": "3" }
+					]
+				}
+			}
+		},
+		{
+			"name": "Update Open Position",
+			"request": {
+				"method": "PUT",
+				"header": [{ "key": "Content-Type", "value": "application/json" }],
+				"url": {
+					"raw": "http://localhost:8080/api/open-positions/1?statusStr=CLOSED&quantity=2",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "open-positions", "1"],
+					"query": [
+						{ "key": "statusStr", "value": "CLOSED" },
+						{ "key": "quantity", "value": "2" }
+					]
+				}
+			}
+		},
+		{
+			"name": "Get All Open Positions",
+			"request": {
+				"method": "GET",
+				"header": [{ "key": "Content-Type", "value": "application/json" }],
+				"url": {
+					"raw": "http://localhost:8080/api/open-positions",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "open-positions"]
+				}
+			}
+		},
+		{
+			"name": "Create Fulfillment Status",
+			"request": {
+				"method": "POST",
+				"header": [{ "key": "Content-Type", "value": "application/json" }],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"allocationId\": 1,\n  \"status\": \"IN_PROGRESS\",\n  \"remarks\": \"Started work\",\n  \"updatedAt\": \"2025-08-12T10:00:00Z\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/fulfillment",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "fulfillment"]
+				}
+			}
+		},
+		{
+			"name": "Update Fulfillment Status",
+			"request": {
+				"method": "PUT",
+				"header": [{ "key": "Content-Type", "value": "application/json" }],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"status\": \"COMPLETED\",\n  \"remarks\": \"Work finished\",\n  \"updatedAt\": \"2025-08-15T15:00:00Z\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/fulfillment/1",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "fulfillment", "1"]
+				}
+			}
+		},
+		{
+			"name": "Get Fulfillment by Allocation ID",
+			"request": {
+				"method": "GET",
+				"header": [{ "key": "Content-Type", "value": "application/json" }],
+				"url": {
+					"raw": "http://localhost:8080/api/fulfillment/1",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "fulfillment", "1"]
+				}
+			}
 		}
+
+
 	]
 }
